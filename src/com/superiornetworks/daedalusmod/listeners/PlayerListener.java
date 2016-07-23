@@ -3,7 +3,8 @@ package com.superiornetworks.daedalusmod.listeners;
 import com.superiornetworks.daedalusmod.DaedalusMod;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 
 public class PlayerListener implements Listener
   {
@@ -14,11 +15,16 @@ public class PlayerListener implements Listener
     {
         this.plugin = plugin;
     }
-
+    
     @EventHandler
-    public void onBlockPlace(BlockPlaceEvent event)
+    public void onPlayerInteract(PlayerInteractEvent event)
     {
-        plugin.signBlocker.onBlockPlace(event);
+        plugin.interactBlocker.onPlayerInteract(event);
     }
-
+    
+    @EventHandler
+    public void onPlayerChat(AsyncPlayerChatEvent e)
+    {
+        plugin.chatDetector.onPlayerChat(e);
+    }
   }
