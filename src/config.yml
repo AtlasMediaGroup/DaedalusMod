@@ -40,6 +40,9 @@ aienable:
 #This will enable or disable the verification command (/verify) If this is set to false the command will return an error, if true it will follow the continued configuration settings. 
 verifyenabled: true
 
+#This will set the verification message for /verify
+verify-password: walrus
+
 #This is the messages that will appear in the command. You can have a title and up to 8 lines. Bukkit Colour codes are support along with punctuation as long as they are in single speach marks '   ' 
 verify:
     title: '&4&lAttention: You have been flagged as an imposter, please follow these steps:'
